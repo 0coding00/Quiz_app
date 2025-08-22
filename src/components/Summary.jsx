@@ -8,19 +8,19 @@ export default function Summary({userAnswers}){
       let wrongAnswersShare=Math.round(((userAnswers.length-correctAnswers.length)/userAnswers.length)*100);
     return <div id='summary'>
             <img src={completedQuizImg} alt="completedQuizImg" /> 
-            <h2>انتهى الاختبار !</h2> 
+            <h2>Test is finished</h2> 
             <div id="summary-stats">
             <p>
                 <span className="number">{skippedAnswersShare}%</span>
-                <span className="text">الاسئلة التي لم تجيب عليها</span>
+                <span className="text">Skipped Quastions</span>
             </p>
             <p>
                 <span className="number">{correctAnswersShare}%</span>
-                <span className="text">الاجابات الصحيحة</span>
+                <span className="text">Correct Answers</span>
             </p>
             <p>
                 <span className="number">{wrongAnswersShare}%</span>
-                <span className="text">الاجابات الخاطئة</span>
+                <span className="text">Wrong Answers</span>
             </p>
             </div>
             <ol>{
@@ -38,7 +38,7 @@ export default function Summary({userAnswers}){
          return   <li key={index}>
             <h3>{index + 1}</h3>
                <p className="question">{questions[index].text}</p> 
-               <p className={cssClass}>{answer ? answer : 'لم تجب'}</p> 
+               <p className={cssClass}>{answer ? answer : 'Did not Answer'}</p> 
             </li>
                 })
                 }
